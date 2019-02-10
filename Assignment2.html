@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<meta charset="utf-8" />
+</head>
+<body>
+<script>
+
+function setup() {
+	createCanvas(400, 400);
+}
+
+function draw() {
+	var topH = 120;
+	var middleH = height - 160 // 240;
+	var bottomH = 305;
+	var leftV = 180;
+	var rightV = 370;
+  var vbottomH = 385;
+  var middleV = 290;
+
+	background(255, 255, 240, 30);
+
+	noStroke();
+	fill(220, 0, 0) // Red
+	rect(0, 0, leftV, middleH) // Red rectangle
+
+	fill(0, 120, 255); // Blue
+	rect(rightV, middleH, 30, 65); // Blue rectangle
+
+	fill(255, 235, 0) // Yellow
+	rect(leftV, vbottomH, 110, 15); // Yellow rectangle
+
+  fill(50, 0, 0);
+  rect(middleV, vbottomH, 80, 15); // Black rectangle
+
+	stroke(0);
+	strokeCap(SQUARE);
+	strokeWeight(8);
+	line(leftV, 0, leftV, mouseY); // Left vertical
+
+	line(rightV, middleH, rightV, mouseY); // Right vertical
+
+	line(0, middleH, mouseX, middleH); // Middle horizontal
+
+	line(rightV, bottomH, mouseX, bottomH); // Bottom horizontal
+
+	line(leftV, vbottomH, mouseY, vbottomH); // Very bottom horizontal
+
+  line(middleV, vbottomH, middleV, 400); // Middle Vertical
+
+}
+
+</script>
+</body>
+</html>
